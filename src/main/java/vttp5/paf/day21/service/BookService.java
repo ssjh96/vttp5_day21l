@@ -20,16 +20,19 @@ public class BookService {
         return bookRepo.getBooks(author, count);
     }
 
-    public Book getBooksByAsin(String asin)
+
+
+    public Optional<Book> getBooksByAsin(String asin)
     {
         Optional<Book> optionalBook = bookRepo.getBookByAsin(asin);
 
-        if (optionalBook.isPresent())
-        {
-            Book book = optionalBook.get();
-            return book;
-        }
+        return optionalBook;
+        // if (optionalBook.isPresent())
+        // {
+        //     Book book = optionalBook.get();
+        //     return book;
+        // }
 
-        throw new RuntimeException("Book not found for ASIN: " + asin);
+        // throw new RuntimeException("Book not found for ASIN: " + asin);
     }
 }

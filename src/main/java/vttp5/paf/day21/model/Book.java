@@ -139,7 +139,7 @@ public class Book
         b.setReviews(rs.getInt("reviews"));
         b.setPrice(rs.getDouble("price"));
         b.setPublishedDate(rs.getDate("publishedDate"));
-        b.setCategory_name(rs.getNString("category_name"));
+        b.setCategory_name(rs.getString("category_name"));
 
         return b;
     }
